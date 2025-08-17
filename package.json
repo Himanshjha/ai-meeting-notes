@@ -9,13 +9,12 @@
     "tailwind": "npx tailwindcss -i ./src/app/globals.css -o ./src/app/output.css --watch"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^15.4.6",
-    "groq-sdk": "^0.30.0",
-    "next": "^13.5.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "resend": "^6.0.1"
-  },
+  "groq-sdk": "^0.30.0",
+  "next": "^13.5.8",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "resend": "^6.0.1"
+},
   "devDependencies": {
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.10",
@@ -23,5 +22,8 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.9.2"
+  },
+  "resolutions": {
+    "@next/swc-win32-x64-msvc": "@next/swc-linux-x64"
   }
 }
