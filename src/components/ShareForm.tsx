@@ -13,21 +13,27 @@ export default function ShareForm({ summary }: Props) {
       body: JSON.stringify({ email, summary }),
     });
     const data = await res.json();
-    alert(data.success ? "Email sent!" : "Failed to send email");
+    alert(data.success ? "✅ Email sent!" : "❌ Failed to send email");
   };
 
   return (
-    <div>
-      <label>Email to share:</label>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="ml-2 p-1 border rounded"
-      />
-      <button onClick={sendEmail} className="ml-2 px-4 py-1 bg-green-600 text-white rounded">
-        Send
-      </button>
+    <div className="space-y-2">
+      <label className="block font-semibold text-gray-700">Email to share:</label>
+      <div className="flex space-x-2">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+        />
+        <button
+          onClick={sendEmail}
+          className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition"
+        >
+          Send
+        </button>
+      </div>
     </div>
   );
 }
+

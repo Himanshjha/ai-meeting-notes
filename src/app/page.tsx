@@ -7,21 +7,29 @@ import ShareForm from "@/components/ShareForm";
 import { useState } from "react";
 
 export default function Home() {
-const [transcript, setTranscript] = useState("");
-const [summary, setSummary] = useState("");
+  const [transcript, setTranscript] = useState("");
+  const [summary, setSummary] = useState("");
 
-return (
-    <main className="max-w-3xl mx-auto p-6 space-y-6">
-    <h1 className="text-2xl font-bold">AI Meeting Notes</h1>
-    <h2 className="text-xl font-semibold mt-4">
-  Summarize, edit, and share your meetings effortlessly.
-</h2>
+  return (
+    <main className="container">
+      <div className="bg-white shadow-lg rounded-2xl p-8 space-y-6">
+        {/* Header */}
+        <div className="text-center">
+          <h1 className="text-3xl font-extrabold text-indigo-700">
+            MeetWise – AI Meeting Notes
+          </h1>
+          <p className="text-gray-600 mt-2">
+            Upload, summarize, edit & share meeting notes effortlessly.
+          </p>
+        </div>
 
-    
-    <FileUpload onUpload={setTranscript} />
-    <PromptInput transcript={transcript} setSummary={setSummary} />
-    <SummaryEditor summary={summary} setSummary={setSummary} />
-    <ShareForm summary={summary} />
+        {/* Components */}
+        <FileUpload onUpload={setTranscript} />
+        <PromptInput transcript={transcript} setSummary={setSummary} />
+        <SummaryEditor summary={summary} setSummary={setSummary} />
+        <ShareForm summary={summary} />
+      </div>
     </main>
-);
+  );
 }
+

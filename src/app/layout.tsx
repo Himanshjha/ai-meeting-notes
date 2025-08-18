@@ -2,14 +2,16 @@ import "./globals.css";
 import { ReactNode } from "react";
 
 export const metadata = {
-title: "AI Meeting Notes",
-description: "Summarize meetings with Groq + send via email",
+  title: "MeetWise – AI Meeting Notes",
+  description: "Summarize, edit, and share your meetings effortlessly with AI",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-return (
+  return (
     <html lang="en">
-    <body className="bg-gray-50 text-gray-900">{children}</body>
+      <body className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 to-white text-gray-900">
+        {children}
+      </body>
     </html>
-);
+  );
 }
